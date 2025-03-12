@@ -19,7 +19,10 @@
 
         .feed-container {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
+            align-items: center;
         }
 
         .feed-item {
@@ -70,9 +73,18 @@
 <body>
     <div class="feed-container">
         <div class="feed-item">
-            <img src="public/image/thumbnail_three_demo.png">
+            <img src="image/thumbnail_three_demo.png">
             <button class="nav-button" onclick="location.href='app/demo/demo.html'">Three.js Demo</button>
+        </div>
+        <div class="feed-item">
+            <img src="image/thumbnail_wiggle_3d.png">
+            <button class="nav-button" onclick="location.href='app/wiggle3D/wiggle3D.html'">Wiggle Stereoscopy</button>
+        </div>
+        <div class="feed-item">
+            <img src="image/thumbnail_depth_3d_viewer.png">
+            <button class="nav-button" onclick="location.href='app/depthmap-viewer-3D/depthmap-viewer-3D.html'">Depthmap 3D Viewer</button>
         </div>
     </div>
 </body>
+
 </html>
