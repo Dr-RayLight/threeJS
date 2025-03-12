@@ -2,8 +2,17 @@ import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
-const MyTexture = new URL("..../public/image/roots2_rgbd.png", import.meta.url);
 
+// ------------------------------------------------------------------------------------------------------
+const TextureLoader = _ => new URL(_, import.meta.url);
+const TextureMapper = {
+	forest: () => TextureLoader("../../image/roots2_rgbd.png"),
+	city: () => TextureLoader("../../image/ruins_rgbd.png")
+}
+
+const MyTexture = TextureMapper.forest();
+
+// ------------------------------------------------------------------------------------------------------
 let mesh;
 let material;
 let image_ar;
@@ -22,10 +31,10 @@ camera.position.z = 3;
 
 const scene = new THREE.Scene();
 
-const ambientLight = new THREE.AmbientLight( 0xffffff, 0.5 );
+const ambientLight = new THREE.AmbientLight( 0xffffff, 3);
 scene.add( ambientLight );
 
-const pointLight = new THREE.PointLight( 0xff0000, 0.5 );
+const pointLight = new THREE.PointLight( 0xff0000, 3);
 pointLight.position.z = 2500;
 scene.add( pointLight );
 
